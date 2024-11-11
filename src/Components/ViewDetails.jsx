@@ -8,13 +8,13 @@ const ViewDetails = () => {
     const {user}=useContext(AuthContext)
     const details = useLoaderData()
     // console.log(details);
-    const {itemName, subcategory_name, price, processing_time, rating, description, photo , customization ,stockStatus}=details;
+    const {itemName, subcategory_name, price, processing_time, rating, description, itemPhoto , customization ,stockStatus}=details;
     return (
         <div className="max-w-screen-xl mx-auto px-3">
             <div className="card lg:card-side bg-base-100 shadow-xl border border-primary">
             <figure>
                 <img
-                src={photo}
+                src={itemPhoto}
                 alt="Album" 
                 className="w-[400px] h-[400px]"
                 />

@@ -18,11 +18,12 @@ const UpdateExistingCraft = () => {
         const processing_time = e.target.processing_time.value;
         const rating = e.target.rating.value;
         const description = e.target.description.value;
-        const photo = e.target.photo.value;
+        const itemPhoto = e.target.itemPhoto.value;
+        const subcategoryPhoto = e.target.subcategory_photo.value;
         const email = user.email;
         const customization = e.target.customization.value;
         const stockStatus = e.target.stockStatus.value;
-        const newUpdateCraft = { itemName, subcategory_name, price, processing_time, rating, description, photo , customization ,stockStatus, email};
+        const newUpdateCraft = { itemName, subcategory_name, price, processing_time, rating, description, itemPhoto , subcategoryPhoto, customization ,stockStatus, email};
         console.log(newUpdateCraft);
         fetch(`http://localhost:5000/updateExistingCraft/${oldCraft._id}` , {
             method: "PUT",
@@ -191,14 +192,29 @@ const UpdateExistingCraft = () => {
                     <div className="form-control py-2 font-raleway">
                     <label className="label">
                         <span className="label-text text-lg font-semibold">
-                        Photo
+                        Item Photo
                         </span>
                     </label>
                     <input
-                        defaultValue={oldCraft.photo}
-                        name="photo"
+                        defaultValue={oldCraft.itemPhoto}
+                        name="itemPhoto"
                         type="url"
-                        placeholder="Enter photo URL"
+                        placeholder="Enter item photo URL"
+                        className=" input input-bordered"
+                        required
+                    />
+                    </div>
+                    <div className="form-control py-2 font-raleway">
+                    <label className="label">
+                        <span className="label-text text-lg font-semibold">
+                        Subcategory Photo
+                        </span>
+                    </label>
+                    <input
+                        defaultValue={oldCraft.subcategoryPhoto}
+                        name="subcategory_photo"
+                        type="url"
+                        placeholder="Enter subcategory photo URL"
                         className=" input input-bordered"
                         required
                     />

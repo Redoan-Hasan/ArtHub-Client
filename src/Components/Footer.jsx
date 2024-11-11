@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
         <div>
-        <footer className="footer footer-center  text-black-content ">
+        <footer className="footer gap-y-2 footer-center  text-black-content  py-2">
             <aside>
             <img className="h-[100px]" src="https://i.postimg.cc/qR2NGnYZ/Art-Hub-logo-transparent.png" alt="" />
             <p className="font-bold">

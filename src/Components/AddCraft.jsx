@@ -15,11 +15,12 @@ const AddCraft = () => {
         const processing_time = e.target.processing_time.value;
         const rating = e.target.rating.value;
         const description = e.target.description.value;
-        const photo = e.target.photo.value;
+        const itemPhoto = e.target.itemPhoto.value;
+        const subcategoryPhoto = e.target.subcategory_photo.value;
         const email = user.email;
         const customization = e.target.customization.value;
         const stockStatus = e.target.stockStatus.value;
-        const newCraft = { itemName, subcategory_name, price, processing_time, rating, description, photo , customization ,stockStatus, email};
+        const newCraft = { itemName, subcategory_name, price, processing_time, rating, description, itemPhoto, subcategoryPhoto , customization ,stockStatus, email};
         console.log(newCraft);
         fetch("http://localhost:5000/crafts",{
             method: "POST",
@@ -184,13 +185,27 @@ const AddCraft = () => {
                     <div className="form-control py-2 font-raleway">
                     <label className="label">
                         <span className="label-text text-lg font-semibold">
-                        Photo
+                        Item Photo
                         </span>
                     </label>
                     <input
-                        name="photo"
+                        name="itemPhoto"
                         type="url"
-                        placeholder="Enter photo URL"
+                        placeholder="Enter item photo URL"
+                        className=" input input-bordered"
+                        required
+                    />
+                    </div>
+                    <div className="form-control py-2 font-raleway">
+                    <label className="label">
+                        <span className="label-text text-lg font-semibold">
+                        Subcategory Photo
+                        </span>
+                    </label>
+                    <input
+                        name="subcategory_photo"
+                        type="url"
+                        placeholder="Enter subcategory photo URL"
                         className=" input input-bordered"
                         required
                     />

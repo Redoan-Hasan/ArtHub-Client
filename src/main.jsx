@@ -16,6 +16,7 @@ import ViewDetails from './Components/ViewDetails';
 import MyCraftList from './Components/MyCraftList';
 import UpdateExistingCraft from './Components/UpdateExistingCraft';
 import PrivateRoute from './Components/PrivateRoute';
+import MatchingSubcategory from './Components/MatchingSubcategory';
 
 
 
@@ -61,6 +62,11 @@ const router = createBrowserRouter([
         path: '/updateExistingCraft/:id',
         element: <PrivateRoute><UpdateExistingCraft /></PrivateRoute>,
         loader: ({params})=> fetch(`http://localhost:5000/updateExistingCraft/${params.id}`)
+      },
+      {
+        path: '/matchingSubCategory/:subcategory',
+        element:<MatchingSubcategory />,
+        loader: ({params})=>fetch(`http://localhost:5000/matchingSubCategory/${params.subcategory}`)
       }
     ]
   },

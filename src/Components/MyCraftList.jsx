@@ -65,12 +65,26 @@ const MyCraftList = () => {
                 </ul>
 </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5 px-4 py-4">
-                {
-                    sortedCrafts.map(craft =>(
+            <div className="">
+                {   sortedCrafts.length === 0 ?
+                    <div>
+                        <section className="flex items-center w-full h-full">
+                            <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">
+                                <div className="max-w-md text-center">
+                                    <h2 className="mb-8 font-extrabold text-9xl dark:text-gray-400">
+                                        <span className="sr-only">Error</span>404
+                                    </h2>
+                                    <p className=" mt-4 mb-8 text-2xl font-semibold md:text-3xl">You do not add any craft item</p>
+                                    <Link to='/' rel="noopener noreferrer" href="#" className="px-8 py-3 font-semibold rounded dark:bg-violet-600 dark:text-gray-50">Back to homepage</Link>
+                                </div>
+                            </div>
+                        </section>
+                    </div>:
+                    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5 px-4 py-4">
+                        {sortedCrafts.map(craft =>(
                         <div key={craft._id}>
                             <div data-aos="fade-right" data-aos-duration="800" className=" flex flex-col overflow-x-hidden h-[545px]  w-full border-2 border-primary p-1  rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
-                                <img src={craft.photo} alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500" />
+                                <img src={craft.itemPhoto} alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500" />
                                 <div data-aos="fade-left" data-aos-duration = "500" className="flex flex-col justify-between flex-grow p-6 space-y-8">
                                     <div  className="space-y-2">
                                         <h2 className="text-3xl font-semibold tracking-wide">{craft.itemName}</h2>
@@ -89,7 +103,8 @@ const MyCraftList = () => {
                                 </div>
                             </div>
                         </div>
-                    ))
+                        ))}
+                    </div>
                 }
             </div>
         </div>
