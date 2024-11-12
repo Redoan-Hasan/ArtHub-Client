@@ -45,7 +45,7 @@ const AddCraft = () => {
         <div className="max-w-screen-xl mx-auto pt-10 text-center lg:text-left">
             <Link
             to="/"
-            className="btn btn-primary"
+            className="btn btn-primary ml-2"
             >
             <span className="text-xl font-normal">
                 <FaArrowLeft />
