@@ -3,6 +3,7 @@ import { FaArrowLeft } from "react-icons/fa6";
 import { useContext } from "react";
 import { AuthContext } from "./AuthProvider";
 import Swal from "sweetalert2";
+// import axios from "axios";
 
 const AddCraft = () => {
   const { user } = useContext(AuthContext);
@@ -33,6 +34,12 @@ const AddCraft = () => {
       email,
     };
     console.log(newCraft);
+
+
+    // how to use axios instead of fetch 
+    // axios.post('https://art-hub-server.vercel.app/crafts',newCraft)
+    // .then(data => console.log(data.data))
+
     fetch("https://art-hub-server.vercel.app/crafts", {
       method: "POST",
       headers: {
