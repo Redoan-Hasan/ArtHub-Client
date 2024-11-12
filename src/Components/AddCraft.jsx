@@ -38,7 +38,13 @@ const AddCraft = () => {
 
     // how to use axios instead of fetch 
     // axios.post('https://art-hub-server.vercel.app/crafts',newCraft)
-    // .then(data => console.log(data.data))
+    // .then((data.data) => {
+    //   e.target.reset();
+    //   console.log(data.data);
+    //   if (data.data.insertedId) {
+    //     Swal.fire("Successfully Added!");
+    //   }
+    // });
 
     fetch("https://art-hub-server.vercel.app/crafts", {
       method: "POST",
