@@ -69,10 +69,10 @@ const UpdateExistingCraft = () => {
         <div className="max-w-screen-xl mx-auto p-10 md:p-16 lg:p-16 my-12 rounded-lg border border-primary">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold pb-1 md:pb-2 lg:pb-4">
-              Add New Craft
+              Update Existing Craft
             </h1>
             <p className=" text-base md:text-lg lg:text-lg font-medium leading-8">
-              Wanna add your own craft?
+              Wanna make some changes in your existing crafts?
             </p>
           </div>
           <div>
